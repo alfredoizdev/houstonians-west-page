@@ -7,7 +7,7 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://houstonianswest.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://houstonians-west-page.vercel.app";
 
 export const metadata: Metadata = {
   title: {
