@@ -38,14 +38,14 @@ export const metadata: Metadata = {
     siteName: "Houstonians FC West",
     title: "Houstonians FC West | Youth Soccer Club in Houston",
     description:
-      "Developing champions on and off the field. Competitive youth soccer programs for ages 5–18 in West Houston.",
+      "Developing champions on and off the field. Competitive youth soccer programs for ages 5–18 in West Houston. Join our academy today!",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Houstonians FC West youth soccer team",
-        type: "image/png",
+        type: "image/jpeg",
       },
     ],
   },
@@ -55,8 +55,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Houstonians FC West | Youth Soccer Club in Houston",
     description:
-      "Developing champions on and off the field. Competitive youth soccer programs for ages 5–18 in West Houston.",
-    images: ["/og-image.png"],
+      "Developing champions on and off the field. Competitive youth soccer programs for ages 5–18 in West Houston. Join our academy today!",
+    images: ["/og-image.jpg"],
   },
 
   // Favicon & icons
