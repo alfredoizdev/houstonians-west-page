@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: "Gallery | Houstonians FC West",
     description:
       "Photos from Houstonians FC West matches, training sessions, and tournaments.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
 };
 
