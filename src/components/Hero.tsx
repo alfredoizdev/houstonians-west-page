@@ -21,7 +21,7 @@ export default function Hero() {
         playsInline
         className="absolute inset-0 hidden h-full w-full object-cover object-[center_55%] md:block"
       >
-        <source src="/video/banner-hero.mp4" type="video/mp4" />
+        <source src="/video/banner-hero-compressed.mp4" type="video/mp4" />
       </video>
 
       {/* Dark overlay */}
