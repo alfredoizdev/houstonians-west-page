@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
+import Footer from "@/components/Footer";
 
 const allImages = Array.from({ length: 29 }, (_, i) => ({
   src: `/gallery-img/img-${String(i + 1).padStart(2, "0")}.jpeg`,
@@ -70,6 +71,7 @@ export default function GalleryPage() {
           ))}
         </div>
       </div>
+      <Footer />
     </main>
   );
 }
