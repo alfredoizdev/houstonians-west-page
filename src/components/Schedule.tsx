@@ -13,31 +13,31 @@ const schedule = [
     day: "Monday",
     time: "5:00 PM – 6:30 PM",
     activity: "U6–U8 Practice",
-    location: "West Houston Sports Complex",
+    location: "Houstonians West Sports Field",
   },
   {
     day: "Tuesday",
     time: "5:30 PM – 7:00 PM",
     activity: "U9–U11 Practice",
-    location: "West Houston Sports Complex",
+    location: "Houstonians West Sports Field",
   },
   {
     day: "Wednesday",
     time: "6:00 PM – 7:30 PM",
     activity: "U12–U14 Practice",
-    location: "Bear Creek Park",
+    location: "Houstonians West Sports Field",
   },
   {
     day: "Thursday",
     time: "6:00 PM – 8:00 PM",
     activity: "U15–U18 Practice",
-    location: "Bear Creek Park",
+    location: "Houstonians West Sports Field",
   },
   {
     day: "Saturday",
     time: "8:00 AM – 12:00 PM",
     activity: "Game Day (All Ages)",
-    location: "Various Locations",
+    location: "Houstonians West Sports Field",
   },
 ];
 

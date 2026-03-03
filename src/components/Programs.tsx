@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -29,13 +33,59 @@ const programs = [
 ];
 
 export default function Programs() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const bgRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = sectionRef.current;
+      const bg = bgRef.current;
+      const content = contentRef.current;
+      if (!section || !bg || !content) return;
+
+      const rect = section.getBoundingClientRect();
+      const windowH = window.innerHeight;
+
+      // Only animate when section is in viewport
+      if (rect.bottom < 0 || rect.top > windowH) return;
+
+      // How far the section has scrolled relative to viewport center
+      const offset = rect.top;
+
+      // Background moves slower (0.3x) — classic parallax
+      bg.style.transform = `translateY(${offset * 0.3}px)`;
+
+      // Content moves slightly faster (0.05x opposite) for depth
+      content.style.transform = `translateY(${offset * 0.05}px)`;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <section id="programs" className="bg-[#F5F5F5] py-20">
-      <div className="mx-auto max-w-7xl px-6">
-        <h2 className="text-center text-3xl font-bold text-[#1A1A1A] sm:text-4xl">
+    <section ref={sectionRef} id="programs" className="relative overflow-hidden py-20">
+      {/* Background image — parallax layer (slower) */}
+      <div ref={bgRef} className="absolute inset-[-50%] will-change-transform">
+        <Image
+          src="/field.jpg"
+          alt=""
+          fill
+          className="object-cover object-center"
+          quality={80}
+        />
+      </div>
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-[#1A1A1A]/50" />
+
+      {/* Content — parallax layer (faster) */}
+      <div ref={contentRef} className="relative z-10 mx-auto max-w-7xl px-6 will-change-transform">
+        <h2 className="text-center text-3xl font-bold text-white sm:text-4xl">
           Our Programs
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-[#1A1A1A]/70">
+        <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-white/70">
           We offer programs for every age and skill level, from first-time
           players to elite competitors.
         </p>
@@ -44,7 +94,7 @@ export default function Programs() {
           {programs.map((p) => (
             <Card
               key={p.name}
-              className="border-gray-100 bg-white shadow-sm transition-shadow hover:shadow-md"
+              className="border-white/10 bg-white/95 shadow-lg backdrop-blur-sm transition-shadow hover:shadow-xl"
             >
               <CardContent className="p-8">
                 <Badge variant="secondary" className="bg-[#C41E3A]/10 text-[#C41E3A] hover:bg-[#C41E3A]/10">
