@@ -8,9 +8,18 @@ const allImages = Array.from({ length: 29 }, (_, i) => ({
   alt: `Houstonians FC West photo ${i + 1}`,
 }));
 
-export const metadata = {
-  title: "Gallery | Houstonians FC West",
-  description: "Photos from Houstonians FC West matches, training sessions, and tournaments.",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Gallery",
+  description:
+    "Photos from Houstonians FC West matches, training sessions, and tournaments in West Houston.",
+  openGraph: {
+    title: "Gallery | Houstonians FC West",
+    description:
+      "Photos from Houstonians FC West matches, training sessions, and tournaments.",
+    images: ["/og-image.jpg"],
+  },
 };
 
 export default function GalleryPage() {
